@@ -42,5 +42,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0"
-  }
+  },
+  "repository": "https://github.com/ringcrl/vscode-translator"
 }
