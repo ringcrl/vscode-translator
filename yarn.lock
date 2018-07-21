@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@types/blueimp-md5@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@types/blueimp-md5/-/blueimp-md5-2.7.0.tgz#404222806800478ca2782e8ad46590aba7f14627"
+
 "@types/mocha@^2.2.42":
   version "2.2.48"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-2.2.48.tgz#3523b126a0b049482e1c3c11877460f76622ffab"
@@ -9,6 +13,10 @@
 "@types/node@^7.0.43":
   version "7.0.60"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.60.tgz#5406c35961e4f9e2d5a1b9482daa14501754ecda"
+
+"@types/node@^9.3.0":
+  version "9.6.23"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.23.tgz#fc429962c1b75f32bd66214a3997f660e8434f0d"
 
 ajv@^5.1.0:
   version "5.5.2"
@@ -170,6 +178,10 @@ block-stream@*:
   resolved "https://registry.yarnpkg.com/block-stream/-/block-stream-0.0.9.tgz#13ebfe778a03205cfe03751481ebb4b3300c126a"
   dependencies:
     inherits "~2.0.0"
+
+blueimp-md5@^2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/blueimp-md5/-/blueimp-md5-2.10.0.tgz#02f0843921f90dca14f5b8920a38593201d6964d"
 
 boom@2.x.x:
   version "2.10.1"
@@ -1652,6 +1664,15 @@ tough-cookie@~2.3.0, tough-cookie@~2.3.3:
   resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.3.4.tgz#ec60cee38ac675063ffc97a5c18970578ee83655"
   dependencies:
     punycode "^1.4.1"
+
+translation.js@^0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/translation.js/-/translation.js-0.7.5.tgz#97e871d78318770930773f297fffb40c4209b053"
+  dependencies:
+    "@types/blueimp-md5" "^2.7.0"
+    "@types/node" "^9.3.0"
+    blueimp-md5 "^2.10.0"
+    tslib "^1.8.1"
 
 tslib@^1.8.0, tslib@^1.8.1:
   version "1.9.0"

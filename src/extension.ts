@@ -1,8 +1,9 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import translator from './api';
+const { google } = require('translation.js');
 import { window, ExtensionContext, commands } from 'vscode';
-const REVIEW_INTERVAL = 60 * 60 * 1000;
+const REVIEW_INTERVAL = 10 * 60 * 1000;
 // const REVIEW_INTERVAL = 5000;
 
 async function showTranslateResult(srcText:string, translateText:string) {
@@ -56,11 +57,21 @@ function activate(context:ExtensionContext) {
     let srcText = editor.document.getText(selection);
     if (!srcText) { return; }
 
-    const sougouFetchResult:any = await translator.sougouTranslate(srcText);
-    if (sougouFetchResult.errorCode !== 0) { return; }
-    const translateText = sougouFetchResult.translate.dit;
-    
-    showTranslateResult(srcText, translateText);
+    const srcTextLength = srcText.split(' ');
+    let translateResult:any;
+    if (srcTextLength.length > 1) {
+      translateResult = await translator.sougouTranslate(srcText);
+      if (translateResult.errorCode !== 0) { return; }
+      const translateText = translateResult.translate.dit;
+      showTranslateResult(srcText, translateText);
+    } else {
+      translateResult = await google.translate(srcText);
+      const translateText = translateResult.dict ? 
+        translateResult.dict.join('\n') :
+        translateResult.result.join('\n');
+      showTranslateResult(srcText, translateText);
+    }
+
   });
 
   context.subscriptions.push(disposable);

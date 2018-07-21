@@ -1,4 +1,4 @@
-import { google, sougou } from './client';
+import { google, sougou } from './request';
 import { _sougouUuid } from '../utils';
 
 export default {
@@ -43,7 +43,3 @@ export default {
     return sougou.post('/reventondc/translate', data);
   }
 };
-
-
-// import translator from './api';
-// await translator.sougouTranslate('The command has been defined in the package.json file');
