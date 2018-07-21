@@ -2,7 +2,7 @@
   "name": "vscode-translator",
   "displayName": "vscode-translator",
   "description": "a vscode translator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "chenng",
   "engines": {
     "vscode": "^1.22.0"
