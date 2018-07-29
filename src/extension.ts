@@ -2,8 +2,8 @@
 // Import the module and reference it with the alias vscode in your code below
 import translator from './api';
 import { window, ExtensionContext, commands } from 'vscode';
-const REVIEW_INTERVAL = 10 * 60 * 1000;
-// const REVIEW_INTERVAL = 5000;
+// const REVIEW_INTERVAL = 10 * 60 * 1000;
+const REVIEW_INTERVAL = 5000;
 
 async function showTranslateResult(srcText:string, translateText:string) {
 
@@ -26,13 +26,13 @@ async function showTranslateResult(srcText:string, translateText:string) {
       if (selectedText === '我已记住') {
         clearTimeout(timer);
       } else if (selectedText === '查看翻译') {
-        const srcTextLength = srcText.split(' ').length;
+        // const srcTextLength = srcText.split(' ').length;
         let result:any;
-        if (srcTextLength === 1) {
-          result = await translator.getGoogleTranslateResult(srcText);
-        } else {
-          result = await translator.getSougouTranslateResult(srcText);
-        }
+        // if (srcTextLength === 1) {
+        result = await translator.getGoogleTranslateResult(srcText);
+        // } else {
+          // result = await translator.getSougouTranslateResult(srcText);
+        // }
         await window.showInformationMessage(
           result,
           { modal: false },
@@ -61,13 +61,13 @@ function activate(context:ExtensionContext) {
     let srcText = editor.document.getText(selection);
     if (!srcText) { return; }
 
-    const srcTextLength = srcText.split(' ');
+    // const srcTextLength = srcText.split(' ');
     let result:any;
-    if (srcTextLength.length === 1) {
-      result = await translator.getGoogleTranslateResult(srcText);
-    } else {
-      result = await translator.getSougouTranslateResult(srcText);
-    }
+    // if (srcTextLength.length === 1) {
+    result = await translator.getGoogleTranslateResult(srcText);
+    // } else {
+      // result = await translator.getSougouTranslateResult(srcText);
+    // }
 
     showTranslateResult(srcText, result);
 
