@@ -2,8 +2,8 @@
 // Import the module and reference it with the alias vscode in your code below
 import translator from './api';
 import { window, ExtensionContext, commands } from 'vscode';
-// const REVIEW_INTERVAL = 10 * 60 * 1000;
-const REVIEW_INTERVAL = 5000;
+const REVIEW_INTERVAL = 10 * 60 * 1000;
+// const REVIEW_INTERVAL = 5000;
 
 async function showTranslateResult(srcText:string, translateText:string) {
 
